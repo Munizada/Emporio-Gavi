@@ -47,50 +47,51 @@ export function HistoryTimeline() {
     });
 
     return (
-        <section id="historia" className="py-24 bg-neutral-950 text-white overflow-hidden relative">
-            {/* Background Texture */}
-            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5 pointer-events-none"></div>
+        <section id="historia" className="py-24 bg-[#050505] text-white overflow-hidden relative">
+            {/* Background Gradient & Texture */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neutral-800/20 via-neutral-950/0 to-neutral-950 pointer-events-none" />
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
 
             <Container>
-                <div className="text-center mb-20">
+                <div className="text-center mb-20 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white/80 text-sm font-medium mb-4"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-neutral-200 text-sm font-medium mb-6 shadow-glow"
                     >
                         <Instagram className="w-4 h-4" />
                         <span>@emporiogavi</span>
                     </motion.div>
-                    <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-white/80 to-white/40">
+                    <h2 className="text-4xl md:text-7xl font-serif font-bold mb-6 text-white tracking-tight">
                         Nossa Jornada
                     </h2>
-                    <p className="text-white/60 max-w-2xl mx-auto text-lg">
+                    <p className="text-neutral-300 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
                         Da primeira obra ao prato premiado. Acompanhe os capítulos da nossa história através das nossas memórias favoritas.
                     </p>
                 </div>
 
-                <div ref={containerRef} className="relative">
+                <div ref={containerRef} className="relative z-10">
                     {/* Vertical Line */}
-                    <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden md:block" />
+                    <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/10 to-transparent hidden md:block" />
 
-                    <div className="flex flex-col gap-24">
+                    <div className="flex flex-col gap-32">
                         {timelineEvents.map((event, index) => (
                             <TimelineItem key={index} event={event} index={index} />
                         ))}
                     </div>
                 </div>
 
-                <div className="text-center mt-20">
+                <div className="text-center mt-32 relative z-10">
                     <Button
                         size="lg"
-                        className="bg-[#E1306C] hover:bg-[#C13584] text-white border-none rounded-full px-8 shadow-lg shadow-[#E1306C]/20"
+                        className="bg-[#E1306C] hover:bg-[#C13584] text-white border-none rounded-full px-10 py-6 text-lg shadow-lg shadow-[#E1306C]/20 transition-all hover:scale-105"
                         href="https://www.instagram.com/emporiogavi/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         Siga nossa história completa
-                        <ArrowRight className="ml-2 w-4 h-4" />
+                        <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                 </div>
             </Container>
@@ -107,32 +108,33 @@ function TimelineItem({ event, index }: { event: any; index: number }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, type: "spring" }}
-            className={`flex flex-col md:flex-row gap-8 items-center ${isEven ? "md:flex-row" : "md:flex-row-reverse"
+            className={`flex flex-col md:flex-row gap-12 items-center ${isEven ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
         >
             {/* Content Side */}
-            <div className={`flex-1 text-center ${isEven ? "md:text-right" : "md:text-left"}`}>
-                <div className="inline-block mb-4">
-                    <span className="text-6xl font-serif font-bold text-white/5">{event.year}</span>
-                </div>
-                <h3 className="text-2xl font-bold mb-3 text-accent">{event.title}</h3>
-                <p className="text-white/70 leading-relaxed max-w-md mx-auto md:mx-0 ml-auto">
-                    {event.description}
-                </p>
+            <div className={`flex-1 ${isEven ? "md:text-right" : "md:text-left"}`}>
+                <Card glass className="inline-block md:max-w-lg w-full text-left p-8">
+                    <span className="text-5xl font-serif font-bold text-white/10 mb-4 block">{event.year}</span>
+                    <h3 className="text-3xl font-bold mb-4 text-white">{event.title}</h3>
+                    <p className="text-neutral-300 leading-relaxed text-lg">
+                        {event.description}
+                    </p>
+                </Card>
             </div>
 
             {/* Center Dot */}
-            <div className="relative z-10 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-neutral-900 border border-white/20 shadow-xl shadow-black/50">
-                <div className="w-3 h-3 rounded-full bg-accent animate-pulse" />
+            <div className="relative z-10 hidden md:flex items-center justify-center w-4 h-4 rounded-full bg-accent shadow-[0_0_20px_rgba(212,175,55,0.5)]">
+                <div className="absolute w-full h-full rounded-full bg-accent animate-ping opacity-20" />
             </div>
 
             {/* Image Side (Polaroid Style) */}
-            <div className="flex-1">
+            <div className="flex-1 flex justify-center">
                 <motion.div
-                    whileHover={{ scale: 1.02, rotate: isEven ? 2 : -2 }}
-                    className="relative bg-white p-4 pb-12 shadow-2xl skew-y-1 md:skew-y-0 transform transition-all duration-500 max-w-sm mx-auto"
+                    whileHover={{ scale: 1.05, rotate: 0 }}
+                    style={{ rotate: isEven ? 3 : -3 }}
+                    className="relative bg-white p-3 pb-10 shadow-2xl transition-all duration-500 max-w-sm"
                 >
-                    <div className="aspect-square relative overflow-hidden bg-neutral-100 mb-4 filter sepia-[0.2]">
+                    <div className="aspect-square relative overflow-hidden bg-neutral-100 mb-4">
                         <Image
                             src={event.image}
                             alt={event.title}
@@ -140,15 +142,12 @@ function TimelineItem({ event, index }: { event: any; index: number }) {
                             className="object-cover"
                         />
                     </div>
-                    <div className="flex items-center justify-between px-2">
-                        <div className="flex items-center gap-2 text-neutral-800">
+                    <div className="flex items-center justify-between px-2 text-neutral-800">
+                        <div className="flex items-center gap-2">
                             <Heart className="w-5 h-5 fill-red-500 text-red-500" />
-                            <span className="text-sm font-bold">{event.likes} likes</span>
+                            <span className="text-sm font-bold opacity-80">{event.likes}</span>
                         </div>
-                        <Instagram className="w-5 h-5 text-neutral-300" />
-                    </div>
-                    <div className="absolute bottom-4 left-0 right-0 text-center font-handwriting text-neutral-400 text-xs">
-                        @{event.year} • Emporio Gavi
+                        <div className="font-handwriting text-xs opacity-50">@{event.year}</div>
                     </div>
                 </motion.div>
             </div>

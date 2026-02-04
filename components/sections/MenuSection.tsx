@@ -105,7 +105,10 @@ export function MenuSection() {
     const [activeTab, setActiveTab] = useState("especiais");
 
     return (
-        <section id="menu" className="py-32 bg-neutral-50 dark:bg-neutral-900 border-t border-b border-black/5 dark:border-white/5">
+        <section id="menu" className="py-32 bg-neutral-50 dark:bg-[#050505] relative overflow-hidden">
+            {/* Background Gradient */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-neutral-800/20 via-neutral-950/0 to-neutral-950 pointer-events-none" />
+
             <Container>
                 <div className="text-center mb-16">
                     <span className="text-accent font-medium text-sm tracking-widest uppercase mb-4 block">
@@ -169,29 +172,31 @@ export function MenuSection() {
 
 function MenuItem({ item }: { item: any }) {
     return (
-        <div className="group flex items-start gap-6 p-4 rounded-xl hover:bg-white dark:hover:bg-neutral-800 transition-colors duration-300">
+        <Card glass className="group flex flex-col md:flex-row items-start gap-6 p-6 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5">
             {/* Image with Hover Effect */}
-            <div className="relative w-24 h-24 md:w-32 md:h-32 flex-shrink-0 rounded-lg overflow-hidden shadow-md">
+            <div className="relative w-full md:w-32 h-48 md:h-32 flex-shrink-0 rounded-lg overflow-hidden shadow-inner bg-neutral-100 dark:bg-neutral-800">
                 <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transform transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover transform transition-transform duration-700 group-hover:scale-110"
                 />
             </div>
 
-            <div className="flex-1 pt-1">
-                <div className="flex justify-between items-baseline mb-2">
-                    <h3 className="text-xl font-serif font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-accent transition-colors">
+            <div className="flex-1 w-full pt-1">
+                <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-xl font-serif font-bold text-neutral-900 dark:text-white group-hover:text-accent transition-colors">
                         {item.title}
                     </h3>
-                    <span className="text-accent font-semibold ml-4">{item.price}</span>
+                    <span className="text-accent font-semibold ml-4 whitespace-nowrap bg-accent/10 px-3 py-1 rounded-full text-sm">
+                        {item.price}
+                    </span>
                 </div>
-                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-3">
+                <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed mb-4">
                     {item.description}
                 </p>
-                <div className="w-full h-px bg-neutral-200 dark:bg-neutral-800 group-hover:bg-accent/30 transition-colors" />
+                <div className="w-12 h-0.5 bg-neutral-200 dark:bg-neutral-700 group-hover:w-full group-hover:bg-accent transition-all duration-500" />
             </div>
-        </div>
+        </Card>
     );
 }

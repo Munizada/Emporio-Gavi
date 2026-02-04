@@ -12,8 +12,9 @@ export function Card({ children, className, glass = false, ...props }: CardProps
     return (
         <motion.div
             className={cn(
-                "rounded-2xl border border-border bg-white dark:bg-neutral-900 p-6 shadow-sm",
-                glass && "bg-white/60 dark:bg-black/60 backdrop-blur-xl border-white/20 dark:border-white/10 shadow-lg",
+                "rounded-2xl border bg-white dark:bg-neutral-900/50 p-6 shadow-sm transition-all duration-300",
+                "border-neutral-200 dark:border-white/10",
+                glass && "bg-white/70 dark:bg-black/40 backdrop-blur-xl border-white/40 dark:border-white/10 shadow-xl hover:bg-white/80 dark:hover:bg-black/50 hover:border-white/50 dark:hover:border-white/20 hover:scale-[1.02]",
                 className
             )}
             {...props}
