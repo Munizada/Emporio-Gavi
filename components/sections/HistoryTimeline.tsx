@@ -114,7 +114,7 @@ function TimelineItem({ event, index }: { event: any; index: number }) {
             {/* Content Side */}
             <div className={`flex-1 ${isEven ? "md:text-right" : "md:text-left"}`}>
                 <Card glass className="inline-block md:max-w-lg w-full text-left p-8">
-                    <span className="text-5xl font-serif font-bold text-white/10 mb-4 block">{event.year}</span>
+                    <span className="text-5xl font-serif font-bold text-accent mb-4 block drop-shadow-sm">{event.year}</span>
                     <h3 className="text-3xl font-bold mb-4 text-white">{event.title}</h3>
                     <p className="text-neutral-300 leading-relaxed text-lg">
                         {event.description}
