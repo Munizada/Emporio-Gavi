@@ -10,99 +10,99 @@ import { ChevronRight } from "lucide-react";
 
 const menuCategories = [
     {
-        id: "vinhos",
-        label: "Adega Selecionada",
+        id: "especiais",
+        label: "Pratos Especiais",
         items: [
             {
-                title: "Brunello di Montalcino",
-                price: "R$ 480",
-                description: "Toscana, Itália. Encorpado, com notas de frutas negras e especiarias.",
-                image: "/images/wine-bottle.png", // Using existing image as placeholder
+                title: "Salada de Salmão Defumado",
+                price: "R$ 42",
+                description: "Mix de folhas, salmão defumado desfiado, picles de cenoura e granola.",
+                image: "/images/menu-salmao-defumado.png",
             },
             {
-                title: "Pera Manca Branco",
-                price: "R$ 650",
-                description: "Alentejo, Portugal. Complexo, untuoso e com final prolongado.",
-                image: "/images/wine-bottle.png",
+                title: "Crepe Rosbife",
+                price: "R$ 32",
+                description: "Massa leve com ovos e leite, rosbife da casa, molho tapenade de azeitonas e alcaparras.",
+                image: "/images/menu-crepe-rosbife.png",
             },
             {
-                title: "Catena Zapata Malbec",
-                price: "R$ 320",
-                description: "Mendoza, Argentina. Clássico, com taninos macios e notas de violeta.",
-                image: "/images/wine-bottle.png",
+                title: "Salmão Gravlax",
+                price: "R$ 38",
+                description: "Fatia de pão italiano de fermentação natural, creme da casa, topping de gravlax de salmão e picles.",
+                image: "/images/menu-gravlax.png",
             },
             {
-                title: "Champagne Veuve Clicquot",
-                price: "R$ 590",
-                description: "Reims, França. Perlage fina, frescor vibrante e notas de brioche.",
-                image: "/images/wine-bottle.png",
+                title: "Ovos Cremos com Bacon",
+                price: "R$ 20",
+                description: "Fatia de pão italiano de fermentação natural, topping de ovos cremosos e mexidos com bacon.",
+                image: "/images/cheese-board.png", // Using default as we didn't generate this specific one yet
             },
         ],
     },
     {
-        id: "pratos",
-        label: "Pratos do Chef",
+        id: "brunch",
+        label: "Brunch & Entradas",
         items: [
             {
-                title: "Risoto de Camarão com Brie",
-                price: "R$ 89",
-                description: "Arroz arbóreo cremoso, camarões rosa grandes e finalizado com queijo brie.",
-                image: "/images/olive-oil.png", // Placeholder
+                title: "Croissant",
+                price: "R$ 12",
+                description: "Consulte os sabores disponíveis. Clássico amanteigado ou recheado.",
+                image: "/images/menu-croissant.png",
             },
             {
-                title: "Filé ao Molho Poivre",
-                price: "R$ 98",
-                description: "Medalhão de filé mignon alto, crosta de pimentas e batatas rústicas.",
-                image: "/images/olive-oil.png",
+                title: "Quiche",
+                price: "R$ 20",
+                description: "Massa leve e recheio cremoso. Consulte os sabores do dia.",
+                image: "/images/cheese-board.png", // Placeholder
             },
             {
-                title: "Bacalhau à Lagareiro",
-                price: "R$ 110",
-                description: "Lombo de bacalhau confitado no azeite, batatas ao murro e brócolis.",
-                image: "/images/olive-oil.png",
+                title: "Salada Caprese",
+                price: "R$ 34",
+                description: "Mix de folhas, tomate cereja, queijo coalho, molho pesto e croutons.",
+                image: "/images/menu-caprese.png",
             },
             {
-                title: "Pasta Trufada",
-                price: "R$ 78",
-                description: "Massa fresca artesanal, manteiga de trufas brancas e parmesão 24 meses.",
-                image: "/images/olive-oil.png",
+                title: "Pão de Queijo",
+                price: "R$ 4",
+                description: "A receita tradicional mineira, feito com queijo da Canastra.",
+                image: "/images/cheese-board.png", // Placeholder
             },
         ],
     },
     {
-        id: "tapas",
-        label: "Para Compartilhar",
+        id: "doces",
+        label: "Doce Final",
         items: [
             {
-                title: "Tábua de Queijos Premium",
-                price: "R$ 120",
-                description: "Seleção de 5 queijos importados, mel trufado, nuts e pães de fermentação natural.",
-                image: "/images/cheese-board.png",
+                title: "Bolo Tiramisú",
+                price: "R$ 24",
+                description: "Bolo denso com massa de cacau black, recheio de chantilly de café e cobertura de ganache.",
+                image: "/images/menu-tiramisu.png",
             },
             {
-                title: "Burrata Caprese",
-                price: "R$ 68",
-                description: "Burrata cremosa, tomates confit, pesto de manjericão e foccacia.",
-                image: "/images/cheese-board.png",
+                title: "Bolo Vitoriano",
+                price: "R$ 24",
+                description: "Fatia de bolo de massa branca amanteigada, recheio de creme de chantilly e frutas vermelhas.",
+                image: "/images/wine-bottle.png", // Placeholder reuse
             },
             {
-                title: "Jamón Ibérico",
-                price: "R$ 140",
-                description: "Fatias finas de presunto Pata Negra, servidas com pan con tomate.",
-                image: "/images/cheese-board.png",
+                title: "Strudel de Maçã",
+                price: "R$ 20",
+                description: "Fatia de torta folhada recheada com maçã cozida e canela.",
+                image: "/images/wine-bottle.png", // Placeholder reuse
             },
             {
-                title: "Bruschettas Variadas",
-                price: "R$ 48",
-                description: "Mix de sabores: Pomodoro, Cogumelos e Gorgonzola com Mel.",
-                image: "/images/cheese-board.png",
+                title: "Bolo Floresta Negra",
+                price: "R$ 20",
+                description: "Fatia de bolo de chocolate, recheado com cerejas e chantilly.",
+                image: "/images/wine-bottle.png", // Placeholder reuse
             },
         ],
     },
 ];
 
 export function MenuSection() {
-    const [activeTab, setActiveTab] = useState("vinhos");
+    const [activeTab, setActiveTab] = useState("especiais");
 
     return (
         <section id="menu" className="py-32 bg-neutral-50 dark:bg-neutral-900 border-t border-b border-black/5 dark:border-white/5">
@@ -126,8 +126,8 @@ export function MenuSection() {
                             key={category.id}
                             onClick={() => setActiveTab(category.id)}
                             className={`px-8 py-3 rounded-full text-sm font-medium tracking-wide transition-all duration-300 border ${activeTab === category.id
-                                    ? "bg-primary text-primary-foreground border-primary shadow-lg scale-105"
-                                    : "bg-transparent text-muted-foreground border-transparent hover:bg-neutral-200 dark:hover:bg-neutral-800"
+                                ? "bg-primary text-primary-foreground border-primary shadow-lg scale-105"
+                                : "bg-transparent text-muted-foreground border-transparent hover:bg-neutral-200 dark:hover:bg-neutral-800"
                                 }`}
                         >
                             {category.label}
