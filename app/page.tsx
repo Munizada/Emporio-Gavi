@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { HistoryTimeline } from "@/components/sections/HistoryTimeline";
+import { MenuSection } from "@/components/sections/MenuSection";
 import { Values } from "@/components/sections/Values";
 import { CuratedSelection } from "@/components/sections/CuratedSelection";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <HistoryTimeline />
+      <MenuSection />
       <Values />
       <CuratedSelection />
       <Testimonials />
