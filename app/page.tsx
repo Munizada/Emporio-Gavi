@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";
+import { HistoryTimeline } from "@/components/sections/HistoryTimeline";
 import { Values } from "@/components/sections/Values";
 import { CuratedSelection } from "@/components/sections/CuratedSelection";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -10,6 +11,7 @@ export default function Home() {
     <main className="min-h-screen bg-background selection:bg-accent/30 selection:text-accent-foreground">
       <Navbar />
       <Hero />
+      <HistoryTimeline />
       <Values />
       <CuratedSelection />
       <Testimonials />
