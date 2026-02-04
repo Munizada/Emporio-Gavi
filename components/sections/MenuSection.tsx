@@ -172,9 +172,9 @@ export function MenuSection() {
 
 function MenuItem({ item }: { item: any }) {
     return (
-        <Card glass className="group flex flex-col md:flex-row items-start gap-6 p-6 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5">
-            {/* Image with Hover Effect */}
-            <div className="relative w-full md:w-32 h-48 md:h-32 flex-shrink-0 rounded-lg overflow-hidden shadow-inner bg-neutral-100 dark:bg-neutral-800">
+        <Card glass className="group flex flex-col md:flex-row items-center md:items-start gap-6 p-6 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5">
+            {/* Image with Hover Effect - Fixed Square Aspect Ratio */}
+            <div className="relative w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden shadow-inner bg-neutral-100 dark:bg-neutral-800">
                 <Image
                     src={item.image}
                     alt={item.title}
